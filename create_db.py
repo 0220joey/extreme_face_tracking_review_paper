@@ -5,7 +5,7 @@ from os import listdir
 from os.path import isfile, join
 import re
 
-data_dir = '/Users/joeybose/ibug/300W/'
+data_dir = '/media/drive/ibug/300W/'
 indoor = data_dir + '01_Indoor/'
 outdoor = data_dir + '02_Outdoor/'
 indoorDF = pd.DataFrame(columns=('imgPath','points'))
@@ -30,8 +30,8 @@ if __name__ == "__main__":
             pts = [np.fromstring(pt, dtype=float, sep=" ").reshape(-1,1)
                     for pt in pts]
             pts = np.asarray(pts).reshape(-1,2)
-            indoorDF.loc[index_indoor] = [fpath,[pts]]
-            globalDF.loc[index_global] = [fpath,[pts]]
+            indoorDF.loc[index_indoor] = [fpath,pts]
+            globalDF.loc[index_global] = [fpath,pts]
             index_indoor = index_indoor + 1
             index_global = index_global + 1
     for f in outdoor_files:
@@ -46,8 +46,8 @@ if __name__ == "__main__":
             pts = np.asarray(pts).reshape(-1,2)
             fpath = outdoor + f
 	    fpath = fpath.split('.')[0] + '.png'
-            outdoorDF.loc[outdoor_index] = [fpath,[pts]]
-            globalDF.loc[index_global] = [fpath,[pts]]
+            outdoorDF.loc[outdoor_index] = [fpath,pts]
+            globalDF.loc[index_global] = [fpath,pts]
             outdoor_index = outdoor_index + 1
             index_global = index_global + 1
 indoorDF.to_csv('indoor_300w.csv',mode='a',header=True)

@@ -89,7 +89,7 @@ if __name__ == "__main__":
             cv2.circle(rgbImg, (x, y), 1, (0, 0, 255), -1)
         for (x, y) in cleaned:
             cv2.circle(rgbImg, (int(x), int(y)), 1, (0, 255, 0), -1)
-        dump_path = indoor_dump + img.split('/')[-1]
+        dump_path = outdoor_dump + img.split('/')[-1]
         cv2.imwrite(dump_path,rgbImg)
         left_inner = landmarks[39]
         right_inner = landmarks[42]
