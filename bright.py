@@ -7,8 +7,8 @@ from os.path import isfile, join
 import pdb
 import os
 
-data_dir = '/media/drive/ibug/300W/synthetic/dim/'
-dump_dir = '/media/drive/ibug/300W/results/dim/'
+data_dir = '/media/drive/ibug/300W/synthetic/bright/'
+dump_dir = '/media/drive/ibug/300W/results/bright/'
 indoor_dump_dir = dump_dir + '01_Indoor_'
 outdoor_dump_dir = dump_dir + '02_Outdoor_'
 indoor = data_dir + '01_Indoor_'
@@ -61,7 +61,7 @@ if __name__ == "__main__":
     factor_count = 0
     tot_indoor_det = 0
     tot_outdoor_det = 0
-    factors = [0.9,0.8,0.7,0.6,0.5,0.4,0.3,0.2,0.1]
+    factors = [2,3,4,5,6,7,8,9,10]
     for factor in factors:
         indoor_dump = indoor_dump_dir + str(factor) + '/'
         if not os.path.exists(indoor_dump):
@@ -89,7 +89,7 @@ if __name__ == "__main__":
             iter_count = iter_count + 1
             print(iter_count)
         iter_count = 0
-        resultsDF.loc[factor_count] = ['dim','indoor_'+str(factor),total_indoor,tot_indoor_det]
+        resultsDF.loc[factor_count] = ['bright','indoor_'+str(factor),total_indoor,tot_indoor_det]
         factor_count = factor_count + 1
         outdoor_dump = outdoor_dump_dir + str(factor) + '/'
         if not os.path.exists(outdoor_dump):
@@ -116,6 +116,6 @@ if __name__ == "__main__":
             total_outdoor = total_outdoor + img_dist
             iter_count = iter_count + 1
             print(iter_count)
-        resultsDF.loc[factor_count] = ['dim','outdoor_'+str(factor),total_outdoor, tot_outdoor_det]
+        resultsDF.loc[factor_count] = ['bright','outdoor_'+str(factor),total_outdoor, tot_outdoor_det]
         factor_count = factor_count + 1
-    resultsDF.to_csv('dim_results.csv',mode='a',header=True)
+    resultsDF.to_csv('bright_results.csv',mode='a',header=True)

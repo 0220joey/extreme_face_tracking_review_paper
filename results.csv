@@ -1,3 +1,6 @@
 ,experiment,type,loss
 0,baseline,indoor,1594.67145553
 1,baseline,outdoor,2755.55631381
+,experiment,type,loss
+0,baseline,indoor,1594.67145553
+1,baseline,outdoor,2755.55631381
