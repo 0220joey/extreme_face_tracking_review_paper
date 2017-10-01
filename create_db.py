@@ -5,7 +5,7 @@ from os import listdir
 from os.path import isfile, join
 import re
 
-data_dir = '/media/drive/ibug/300W/'
+data_dir = '/media/drive/ibug/300W_cropped/'
 indoor = data_dir + '01_Indoor/'
 outdoor = data_dir + '02_Outdoor/'
 indoorDF = pd.DataFrame(columns=('imgPath','points'))
@@ -50,6 +50,6 @@ if __name__ == "__main__":
             globalDF.loc[index_global] = [fpath,pts]
             outdoor_index = outdoor_index + 1
             index_global = index_global + 1
-indoorDF.to_csv('indoor_300w.csv',mode='a',header=True)
-outdoorDF.to_csv('outdoor_300w.csv',mode='a',header=True)
-globalDF.to_csv('global_300w.csv',mode='a',header=True)
+indoorDF.to_csv('cropped_indoor_300w.csv',mode='a',header=True)
+outdoorDF.to_csv('cropped_outdoor_300w.csv',mode='a',header=True)
+globalDF.to_csv('cropped_global_300w.csv',mode='a',header=True)

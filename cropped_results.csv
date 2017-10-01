@@ -1,0 +1,3 @@
+,experiment,type,loss,total_detected,avg_loss
+0,baseline,indoor,43.9205866271,280,0.156859237954
+1,baseline,outdoor,93.6884117103,265,0.353541176265

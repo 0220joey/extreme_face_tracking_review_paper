@@ -8,13 +8,13 @@ import pdb
 from PIL import ImageEnhance, Image
 import os
 
-data_dir = '/media/drive/ibug/300W/'
-dump_dir = '/media/drive/ibug/300W/synthetic/bright/'
+data_dir = '/media/drive/ibug/300W_cropped/'
+dump_dir = '/media/drive/ibug/300W_cropped/synthetic/bright/'
 indoor_dump = dump_dir + '01_Indoor'
 outdoor_dump = dump_dir + '02_Outdoor'
-indoorDF =  pd.read_csv('indoor_300w.csv')
-outdoorDF = pd.read_csv('outdoor_300w.csv')
-globalDF = pd.read_csv('global_300w.csv')
+indoorDF =  pd.read_csv('cropped_indoor_300w.csv')
+outdoorDF = pd.read_csv('cropped_outdoor_300w.csv')
+globalDF = pd.read_csv('cropped_global_300w.csv')
 
 if __name__ == "__main__":
     i_images = indoorDF['imgPath']
